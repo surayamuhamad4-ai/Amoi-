@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: #fff6f0;
+  color: #241726;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #ffb6c8;
+  color: #241726;
+}
+
+/* Custom scrollbar — sakura themed, falls back gracefully on unsupported browsers */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #fff6f0;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ffb6c8, #d9a299);
+  border-radius: 999px;
+}
+
+/* Visible keyboard focus ring everywhere — accessibility requirement */
+:focus-visible {
+  outline: 3px solid #d4af6a;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.scene-thread {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #d9a299 15%, #d9a299 85%, transparent);
+  transform: translateX(-50%);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
